@@ -1,0 +1,47 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hello
+    - hi
+    - hey
+    - h
+    - good morning
+    - excuse me
+
+- intent: provide_name
+  examples: |
+    - My name is {name}
+    - Name: {name}
+    - {name}
+
+- intent: check_balance
+  examples: |
+    - What is my account balance?
+    - Can you tell me how much money is in my account?
+    - Check balance
+    - balance
+    - can you please check my balance
+    - what's my balance
+    - how much money do I have
+    - tell me my balance
+
+- intent: provide_account_number
+  examples: |
+    - 123456
+    - my account number is 123456
+    - I have an account with the number 123456
+    - account number: 123456
+    - my account number is [123456](account_number)
+    - I have an account with the number [123456](account_number)
+    - account number: [123456](account_number)
+
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you later
+    - have a great day
+    - bye sir
+    - have a wonderful day

@@ -1,0 +1,52 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - check_balance
+  - provide_account_number
+  - provide_name
+
+entities:
+  - account_number
+  - name
+
+slots:
+  account_number:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: account_number
+
+  name:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: name
+
+responses:
+  utter_greet:
+    - text: "Hello! How can I help you today?"
+    - text: "Hi sir! How can I help you today?"
+    - text: "Hello sir"
+    - text: "Welcome sir"
+
+  utter_goodbye:
+    - text: "Goodbye! Have a great day."
+    - text: "Bye sir! Have a nice day."
+    - text: "Goodbye! Have a wonderful day"
+
+  utter_ask_account_number:
+    - text: "Can you please provide your account number?"
+    - text: "Please provide me your account number sir."
+    - text: "What's your account number sir?"
+
+actions:
+  - action_check_balance
+  # Add other actions as needed
+
+templates:
+  utter_ask_account_number:
+    - "Can you please provide your account number?"
+    - "Please provide me your account number sir."
+    - "What's your account number sir?"

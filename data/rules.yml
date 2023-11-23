@@ -1,0 +1,30 @@
+﻿version: "3.1"
+
+rules:
+  - rule: Greet user
+    steps:
+      - intent: greet
+      - action: utter_greet
+
+  - rule: Goodbye user
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - rule: Check balance
+    steps:
+      - intent: check_balance
+      - action: utter_ask_account_number
+
+  - rule: Provide balance
+    condition:
+      - slot_was_set:
+          - account_number: true
+      
+    steps:
+      - action: action_check_balance
+
+  - rule: Provide name
+    steps:
+      - intent: provide_name
+      - action: utter_ask_account_number  # Change this action based on your flow
